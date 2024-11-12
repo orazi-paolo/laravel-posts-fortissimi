@@ -11,7 +11,7 @@
         </ul>
     </div>
     @endif
-    <form action="" method="POST">
+    <form action="{{route('posts.store')}}" method="POST">
         @csrf
 
             <h1 class="mb-3">
