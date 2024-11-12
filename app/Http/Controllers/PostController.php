@@ -21,7 +21,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $posts = Post::all();
+        return view('posts.create', compact('posts'));
     }
 
     /**
@@ -29,7 +30,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $posts = Post::create($request);
+        return redirect()->route('posts.index');
     }
 
     /**
