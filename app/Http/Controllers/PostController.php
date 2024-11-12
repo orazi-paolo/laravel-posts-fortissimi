@@ -21,7 +21,7 @@ class PostController extends Controller
     public function create()
     {
         $posts = Post::all();
-        return view('layouts.posts.create', compact('posts'));
+        return view('posts.create', compact('posts'));
     }
 
     /**
@@ -29,9 +29,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validated();
-        $post = Post::create($data);
-        return redirect()->route('layouts.post.index');
+        $posts = Post::create($request);
+        return redirect()->route('posts.index');
     }
 
     /**
