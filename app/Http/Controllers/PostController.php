@@ -29,7 +29,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validated();
+        $post = Post::create($data);
+        return redirect()->route('layouts.post.index');
     }
 
     /**
