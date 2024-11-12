@@ -14,7 +14,7 @@ class PostSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for ($i=0; $i < 20 ; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $post = new Post();
             $post->title = $faker->realTextBetween(10, 15);
             $post->author = $faker->name();
